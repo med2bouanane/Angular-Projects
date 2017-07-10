@@ -1,0 +1,27 @@
+<h1>
+  {{title}}
+</h1>
+<div class="container" [style.padding]="padding ? 40 : 0">
+  
+  <img [src]="imgUrl" [class.img-rounded]="redondeadas" /> 
+
+  <input type="text" [(ngModel)]="input"/>
+  <button (click)="delete()" type="button" class="btn btn-xs btn-danger">Borrar</button>
+
+  <h3 class="en-linea">{{input}}</h3>
+  <input type="text" [value]="input" (input)=change($event)/>
+
+  <p>
+  <button *ngFor="let btn of btns" (click)="message(btn)" type="button" class="btn btn-lg btn-{{btn}}">{{btn}}</button>
+       <!-- <button (click)="message()" type="button" class="btn btn-lg btn-default">Default</button>
+        <button type="button" class="btn btn-lg btn-primary">Primary</button>
+        <button type="button" class="btn btn-lg btn-success">Success</button>
+        <button type="button" class="btn btn-lg btn-info">Info</button>
+        <button type="button" class="btn btn-lg btn-warning">Warning</button>
+        <button type="button" class="btn btn-lg btn-danger">Danger</button>
+        <button type="button" class="btn btn-lg btn-link">Link</button>-->
+</p>
+<app-estudiantes [universidad]="miUniversidad" [alias]="alias" (seleccionados)="mostrarEstudiante($event)"></app-estudiantes>
+
+<app-formulario></app-formulario>
+</div>

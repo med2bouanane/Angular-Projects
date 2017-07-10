@@ -1,0 +1,9 @@
+<h3>
+  Lista de estudiantes de la universidad {{universidad}}
+</h3>
+{{variable}}
+<ul>
+    <li *ngFor="let estudiante of estudiantes">
+      <span (click)="clickEstudiante($event)">{{estudiante}}</span>
+    </li>
+  </ul>

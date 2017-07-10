@@ -1,0 +1,52 @@
+<!--le damos un nombre al formulario #formulario="ngForm" 
+    que nos servirá de variable_Local que se envia con el submit (ngSubmit)="enviarFormulario(formulario)"
+
+-->
+<form (ngSubmit)="enviarFormulario(formulario)" #formulario="ngForm"> 
+  <fieldset class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" id="nombre" ngModel name="nombre" 
+    #nombre="ngModel"
+    required
+    minlength="5"
+    [ngModel]="estudiante.nombre"
+    />
+    {{nombre.errors | json}}
+    <div *ngIf="nombre.touched && nombre.errors">
+      <div class="alert alert-danger" 
+      *ngIf="nombre.errors.required">
+        El campo Nombre es requerido
+      </div>
+      <div class="alert alert-danger" 
+      *ngIf="nombre.errors.minlength">
+        El número mínimo de caracteres es 5
+      </div>
+    </div>
+    
+
+    <!--<div *ngIf="!formulario.valid">
+      <div class="alert alert-danger" *ngIf="formulario.controls['nombre'].errors['required']">
+        El campo es requerido
+      </div>
+    </div>
+    <div *ngIf="!formulario.valid">
+      <div class="alert alert-danger" *ngIf="formulario.controls['nombre'].errors['required']">
+        El campo es requerido
+      </div>
+    </div>-->
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label for="correo">Correo Electrónico</label>
+    <input type="email" class="form-control" id="correoElectronico" ngModel name="correo"
+    #correo="ngModel"
+    required
+     [ngModel]="estudiante.correo"/>
+    <div class="alert alert-danger" *ngIf="!correo.valid && correo.touched">
+        El campo Correo es requerido
+      </div>
+  </fieldset>
+
+  <button type="submit" class="btn btn-primary">Enviar</button>
+
+</form>
