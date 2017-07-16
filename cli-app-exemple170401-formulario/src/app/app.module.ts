@@ -21,6 +21,6 @@ import { TwitterComponent } from './twitter/twitter.component';
     HttpModule
   ],
   providers: [],
-  bootstrap: [TwitterComponent]//[AppComponent]
+  bootstrap: [AppComponent]//[TwitterComponent]
 })
 export class AppModule { }

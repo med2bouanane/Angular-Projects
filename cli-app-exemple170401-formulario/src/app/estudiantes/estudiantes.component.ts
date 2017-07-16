@@ -8,8 +8,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class EstudiantesComponent implements OnInit {
 
 @Input() universidad:string; // El valor de esta variable se recibe (input) desde el componente padre AppComponent
-@Input('alias') variable:string;
-@Output() seleccionados = new EventEmitter();
+                            // [universidad]
+@Input('alias') variable:string;  // [alias]
+@Output() seleccionados = new EventEmitter(); // (seleccionados)
 @Output() estudiante:string;
 
 estudiantes = ['Estudiante 1','Estudiante 2','Estudiante 3'];

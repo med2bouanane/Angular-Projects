@@ -3,7 +3,7 @@ import { ContactenosComponent } from './contactenos/contactenos.component';
 import { InicioComponent } from './inicio/inicio.component';
 
 
-import { NgModule } from '@angular/core';
+// import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
