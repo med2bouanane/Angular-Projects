@@ -1,14 +1,4 @@
-# Routing
-1) index.html ==> <head> <base href="/">
-2) create app.routing.ts 
-3) a-module-routing ==> export const routing = RouterModule.forRoot(routes)
-4) in app.component.html ==> <router-outlet></router-outlet> ==> <li><a [routerLink]="['inicio']">Inicio</a></li>...
-5) in app.modules.ts ==> imports: [...., routing]
-
-
-
-
-# CliAppExemple170709Routing
+# CliAppExemple170718Service
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
