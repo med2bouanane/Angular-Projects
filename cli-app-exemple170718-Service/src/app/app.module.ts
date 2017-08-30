@@ -1,3 +1,4 @@
+import { AuthService } from './common/auth.service';
 import { routing } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,13 +9,15 @@ import { AppComponent } from './app.component';
 import { ContactenosComponent } from './contactenos/contactenos.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactenosComponent,
     InicioComponent,
-    NosotrosComponent
+    NosotrosComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
