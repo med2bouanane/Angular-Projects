@@ -10,7 +10,12 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class AuthService implements OnInit{
     constructor(private http: Http, private router:Router) { }
-    
+    /**
+     * Los Subjects son Observables que además pueden manejar múltiples suscripciones 
+     * a un único flujo y son capaces de emitir eventos.
+        Como los eventos solo los quieres generar a nivel interno, lo que debes hacer 
+        es crear un Subject privado, y exponer un Observable público con el flujo del primero.
+     */
     private isLoggedSource = new Subject<boolean>();
     isLogged$ = this.isLoggedSource.asObservable(); 
 
